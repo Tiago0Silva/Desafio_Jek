@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import image2 from './mesas.jpg';
 
 export function Make_Reservation({
     table,
@@ -84,101 +85,109 @@ export function Make_Reservation({
     };
 
     return (
-        <div className="reservation_page">
-            <h2>Fazer Reserva</h2>
+        <div className='reservation_main'>
+            <div className="reservation_page">
+                <h2>Fazer Reserva</h2>
 
-            <div className="date_reserv">
-                <label>Date:</label>
-                <input
-                    type="date"
-                    value={date || dayjs().format('YYYY-MM-DD')}
-                    onChange={e => setdate(e.target.value)}
-                />
-            </div>
+                <div className="date_reserv">
+                    <label>Date:</label>
+                    <input
+                        type="date"
+                        value={date || dayjs().format('YYYY-MM-DD')}
+                        onChange={e => setdate(e.target.value)}
+                    />
+                </div>
 
-            <div className="time_reserv">
-                <label>Time:</label>
-                <input
-                    type="time"
-                    value={time || ""}
-                    onChange={e => settime(e.target.value)}
-                />
-            </div>
+                <div className="time_reserv">
+                    <label>Time:</label>
+                    <input
+                        type="time"
+                        value={time || ""}
+                        onChange={e => settime(e.target.value)}
+                    />
+                </div>
 
-            <div className="n_guest_reserv">
-                <label>Number of guests:</label>
-                <input
-                    type="number"
-                    min="1"
-                    value={n_guests || 1}
-                    onChange={e => set_n_guests(Number(e.target.value))}
-                />
-            </div>
+                <div className="n_guest_reserv">
+                    <label>Number of guests:</label>
+                    <input
+                        type="number"
+                        min="1"
+                        value={n_guests || 1}
+                        onChange={e => set_n_guests(Number(e.target.value))}
+                    />
+                </div>
 
-            <div className="name_reserv">
-                <label>Nome:</label>
-                <input
-                    type="text"
-                    value={name || ""}
-                    onChange={e => setname(e.target.value)}
-                />
-            </div>
+                <div className="name_reserv">
+                    <label>Nome:</label>
+                    <input
+                        type="text"
+                        value={name || ""}
+                        onChange={e => setname(e.target.value)}
+                    />
+                </div>
 
-            <div className="email_reserv">
-                <label>Email:</label>
-                <input
-                    type="email"
-                    value={email || ""}
-                    onChange={e => setemail(e.target.value)}
-                />
-            </div>
+                <div className="email_reserv">
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        value={email || ""}
+                        onChange={e => setemail(e.target.value)}
+                    />
+                </div>
 
-            <div className="table_reserv">
-                <label>Chose a table:</label>
-                {loading ? (
-                    <p>Loading available tables...</p>
-                ) : (
-                    <select
-                        value={Selecttable || ""}
-                        onChange={e => setSelecttable(Number(e.target.value))}
-                    >
-                        <option value="">Select a table ... </option>
-                        {!date || !time || !n_guests ? (
-                            <option value="" disabled>
-                                Choose a date, hour and guests
-                            </option>
-                        ) : availableTables.length === 0 ? (
-                            <option value="" disabled>
-                                No tables available
-                            </option>
-                        ) : (
-                            availableTables.map(t => (
-                                <option key={t.id} value={t.id}>
-                                    Table {t.id} — {t.n_seats} seats
+                <div className="table_reserv">
+                    <label>Chose a table:</label>
+                    {loading ? (
+                        <p>Loading available tables...</p>
+                    ) : (
+                        <select
+                            value={Selecttable || ""}
+                            onChange={e => setSelecttable(Number(e.target.value))}
+                        >
+                            <option value="">Select a table ... </option>
+                            {!date || !time || !n_guests ? (
+                                <option value="" disabled>
+                                    Choose a date, hour and guests
                                 </option>
-                            ))
-                        )}
-                    </select>
+                            ) : availableTables.length === 0 ? (
+                                <option value="" disabled>
+                                    No tables available
+                                </option>
+                            ) : (
+                                availableTables.map(t => (
+                                    <option key={t.id} value={t.id}>
+                                        Table {t.id} — {t.n_seats} seats
+                                    </option>
+                                ))
+                            )}
+                        </select>
+                    )}
+                </div>
+                <button
+                    onClick={makeReservation}
+                    disabled={!Selecttable}
+                >
+                    Confirm Reservation
+                </button>
+
+                {date && time && n_guests && !loading && (
+                    <div className="available-tables-info">
+                        <p>
+                            {availableTables.length > 0
+                                ? `${availableTables.length} mesa(s) disponível(eis)`
+                                : "Nenhuma mesa disponível para os critérios selecionados"
+                            }
+                        </p>
+                    </div>
                 )}
             </div>
-
-            <button
-                onClick={makeReservation}
-                disabled={!Selecttable}
-            >
-                Confirmar Reserva
-            </button>
-
-            {date && time && n_guests && !loading && (
-                <div className="available-tables-info">
-                    <p>
-                        {availableTables.length > 0
-                            ? `${availableTables.length} mesa(s) disponível(eis)`
-                            : "Nenhuma mesa disponível para os critérios selecionados"
-                        }
-                    </p>
-                </div>
-            )}
+            <div className='image'>
+                <img
+                    src={image2}
+                    alt="Café Couraça"
+                    className="image-content"
+                />
+            </div>
         </div>
     );
 }

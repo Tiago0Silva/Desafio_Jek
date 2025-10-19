@@ -221,11 +221,30 @@ body {
   cursor: pointer;
 }
 
-.images_couraca {
+.couraca_startpage {
+  display: flex;
   width: 100%;
   height: 435px;
-  background: url('/caminho/para/sua/imagem.jpg') center/cover no-repeat;
+}
+
+.images_couraca {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
   background-color: #D9D9D9;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+}
+
+.image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ===== PÁGINA DE RESERVA ===== */
@@ -255,17 +274,31 @@ body {
 }
 
 
-.reservation_page {
+.reservation_main {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
   align-items: flex-start;
   padding: 5px;
   gap: 40px;
-  width: 70%;
+  width: 90%;
   height: auto;
   padding: 5%;
   background-color: #000000;
   border-radius: 35px;
+}
+
+.reservation_page {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  width: 1500px;
 }
 
 .reservation_form {
@@ -769,6 +802,7 @@ body {
   .text_couraca {
     width: 100%;
     height: auto;
+    text-align: center;
   }
 
   .images_couraca {

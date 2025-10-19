@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Make_Reservation } from "./make_reservation";
 import { Link } from 'react-router-dom';
-
+import image1 from './imagemcouraca.jpg';
 
 export function Home_Page({
     table, settable, setreservation, Selecttable, setSelecttable, isadmin,
@@ -48,19 +48,26 @@ export function Home_Page({
                 )}
 
             </div>
+            <div className="couraca_startpage">
+                <div className="images_couraca">
+                    <div className="main_title">
+                        <h1>Café Couraça</h1>
+                        <h2>Desde 1974 nos vossos Courações</h2>
+                    </div>
+                    <div className="text_couraca">
+                        <a>É descrito como um "Café de Estudantes" e um local onde "num lugar com tantas histórias, criamos novas memórias"</a>
+                    </div>
 
-            <div className="images_couraca">
-                <div className="main_title">
-                    <h1>Café Couraça</h1>
-                    <h2>Desde 1974 nos vossos Courações</h2>
+                    <div className="reserve_button">
+                        <button onClick={handleMakeReservation}>Reservar uma mesa</button>
+                    </div>
                 </div>
-
-                <div className="text_couraca">
-                    <a>É descrito como um "Café de Estudantes" e um local onde "num lugar com tantas histórias, criamos novas memórias"</a>
-                </div>
-
-                <div className="reserve_button">
-                    <button onClick={handleMakeReservation}>Reservar uma mesa</button>
+                <div className="image">
+                    <img
+                        src={image1}
+                        alt="Café Couraça"
+                        className="image-content"
+                    />
                 </div>
             </div>
 
