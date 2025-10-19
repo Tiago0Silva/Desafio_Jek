@@ -1,0 +1,837 @@
+:root {
+  --vh: 100vh;
+  --vh-100: 100vh;
+  --vh-90: 90vh;
+  --vh-80: 80vh;
+  --vh-70: 70vh;
+  --vh-60: 60vh;
+  --vh-50: 50vh;
+  --vw: 100vw;
+  --vw-100: 100vw;
+  --vw-90: 90vw;
+  --vw-80: 80vw;
+  --vw-70: 70vw;
+  --full-height: 100vh;
+  --full-width: 100vw;
+  --header-height: 108px;
+}
+
+/* ===== RESET E ESTILOS GLOBAIS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: var(--full-width);
+  height: var(--full-height);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #FFFFFF;
+  color: #000000;
+  line-height: 1.6;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ===== PÁGINA HOME ===== */
+.home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  padding-top: 800px;
+}
+
+/* ===== BARRA DE NAVEGAÇÃO ===== */
+.header_bar {
+  background: #000000;
+  color: white;
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 1000;
+  gap: 206px;
+}
+
+.header_title {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 46px;
+  color: #FFFFFF;
+  margin: 40px;
+}
+
+.header_login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.header_login button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 35px;
+  gap: 10px;
+  width: 124px;
+  height: 68px;
+  border: 1px solid #F3F3F3;
+  border-radius: 14px;
+  background: transparent;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header_login button:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+/* ===== SEÇÃO PRINCIPAL (LANDING PAGE) ===== */
+.landing_section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 70px;
+  width: 1308px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.header_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px 100px;
+  gap: 206px;
+  width: 100%;
+  height: 435px;
+}
+
+.header_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 35px;
+  width: 531px;
+  height: 376px;
+}
+
+.main_title h1 {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 77px;
+  color: #000000;
+  width: 531px;
+  height: 154px;
+  margin-bottom: 0;
+}
+
+.text_couraca {
+  width: 498px;
+  height: 84px;
+}
+
+.text_couraca a {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #884848;
+  display: block;
+}
+
+.description_section p {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 28px;
+  color: #884848;
+  display: block;
+}
+
+.reserve_button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 35px;
+  gap: 10px;
+  width: 257px;
+  height: 68px;
+  background: #191A23;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reserve_button:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+.reserve_button button {
+  width: auto;
+  height: fit-content;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.images_couraca {
+  width: 100%;
+  height: 435px;
+  background: url('/caminho/para/sua/imagem.jpg') center/cover no-repeat;
+  background-color: #D9D9D9;
+}
+
+/* ===== PÁGINA DE RESERVA ===== */
+.reservation_section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 60px 100px 80px;
+  gap: 40px;
+  width: 1240px;
+  max-width: 90%;
+  height: 925px;
+  background: #000000;
+  border-radius: 45px;
+  margin: 0 auto;
+}
+
+.date_reserv,
+.time_reserv,
+.n_guest_reserv,
+.name_reserv,
+.email_reserv,
+.table_reserv,
+.reservation_page h2 {
+  color: #cacaca;
+
+}
+
+
+.reservation_page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  gap: 40px;
+  width: 70%;
+  height: auto;
+  padding: 5%;
+  background-color: #000000;
+  border-radius: 35px;
+}
+
+.reservation_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 25px;
+  width: 556px;
+  height: 677px;
+}
+
+.form_field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 5px;
+  width: 556px;
+  height: 92px;
+}
+
+.form_field label {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #FFFFFF;
+  height: 28px;
+}
+
+.form_input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 18px 30px;
+  gap: 10px;
+  width: 556px;
+  height: 59px;
+  background: #421b1b;
+  border: 1px solid #FFFFFF;
+  border-radius: 14px;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #898989;
+}
+
+.form_input::placeholder {
+  color: #898989;
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: #F1A900;
+}
+
+.reservation_submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 35px;
+  gap: 10px;
+  width: 556px;
+  height: 68px;
+  background: #F1A900;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reservation_submit:hover {
+  background: #e09a00;
+  transform: translateY(-2px);
+}
+
+.reservation_submit button {
+  width: 141px;
+  height: 40px;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== LAYOUT DAS MESAS ===== */
+.tables_layout {
+  width: 471px;
+  height: 785px;
+  position: relative;
+  background: #D9D9D9;
+}
+
+.table {
+  position: absolute;
+  width: 90px;
+  height: 75px;
+  background: #BDBDBD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* Posições das mesas */
+.table-1 {
+  left: 34px;
+  top: 50px;
+}
+
+.table-2 {
+  left: 140px;
+  top: 50px;
+}
+
+.table-3 {
+  left: 246px;
+  top: 50px;
+}
+
+.table-8 {
+  left: 34px;
+  top: 675px;
+}
+
+.table-9 {
+  left: 140px;
+  top: 675px;
+}
+
+.table-10 {
+  left: 246px;
+  top: 675px;
+}
+
+.table-11 {
+  left: 352px;
+  top: 675px;
+}
+
+.table-4 {
+  left: 34px;
+  top: 215px;
+  transform: rotate(-90deg);
+}
+
+.table-5 {
+  left: 34px;
+  top: 321px;
+  transform: rotate(-90deg);
+}
+
+.table-6 {
+  left: 34px;
+  top: 427px;
+  transform: rotate(-90deg);
+}
+
+.table-7 {
+  left: 34px;
+  top: 533px;
+  transform: rotate(-90deg);
+}
+
+.table-15 {
+  left: 367px;
+  top: 215px;
+  transform: rotate(-90deg);
+}
+
+.table-14 {
+  left: 367px;
+  top: 321px;
+  transform: rotate(-90deg);
+}
+
+.table-13 {
+  left: 367px;
+  top: 427px;
+  transform: rotate(-90deg);
+}
+
+.table-12 {
+  left: 367px;
+  top: 533px;
+  transform: rotate(-90deg);
+}
+
+/* ===== PÁGINA DE LOGIN ===== */
+.register-bg,
+.Card_login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  z-index: 100;
+}
+
+.register-card,
+.Card_login .Header {
+  background-color: #ffffff;
+  width: 400px;
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.Card_login .Header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.login_form_group {
+  margin-bottom: 1rem;
+}
+
+.login_form_group input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login_form_group input:focus {
+  border-color: #d4af37;
+  outline: none;
+}
+
+.login_button,
+.register_button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 0.8rem;
+}
+
+.login_button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+.login_button:hover {
+  background-color: #d4af37;
+  color: #000000;
+}
+
+.register_button {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.register_button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.Card_login p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: red;
+}
+
+/* ===== PÁGINA DE REGISTRO ===== */
+.exit_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.exit_register button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.exit_register button:hover {
+  background-color: #d4af37;
+  color: #000000;
+}
+
+/* ===== OVERLAY DE LOGIN (ALTERNATIVO) ===== */
+.login_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.login_container {
+  width: 100%;
+  max-width: 450px;
+  padding: 0 20px;
+}
+
+.login_card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 100%;
+}
+
+.login_header {
+  background: #000;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.login_header h1 {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.close_button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close_button:hover {
+  background: white;
+  color: #000;
+}
+
+.login_form {
+  padding: 2rem;
+}
+
+.form_group {
+  margin-bottom: 1.5rem;
+}
+
+.form_group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+  font-size: 1rem;
+  font-family: 'Space Grotesk';
+}
+
+.login_input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: 'Space Grotesk';
+}
+
+.login_input:focus {
+  outline: none;
+  border-color: #F1A900;
+}
+
+.login_submit_button {
+  width: 100%;
+  background: #191A23;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Space Grotesk';
+  margin-bottom: 1rem;
+}
+
+.login_submit_button:hover {
+  background: #333333;
+}
+
+/* ===== PÁGINA ADMIN DASHBOARD ===== */
+.admin_dashboard {
+  width: 215%;
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.dashboard-content {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Nav_buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.Nav_buttons a {
+  padding: 10px 20px;
+  background: #191A23;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.Nav_buttons a:hover {
+  background: #333333;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .header_bar {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .header_content {
+    flex-direction: column;
+    padding: 0px 20px;
+    gap: 40px;
+    height: auto;
+  }
+
+  .header_text {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main_title h1 {
+    width: 100%;
+    font-size: 40px;
+    line-height: 50px;
+    height: auto;
+  }
+
+  .text_couraca {
+    width: 100%;
+    height: auto;
+  }
+
+  .images_couraca {
+    width: 100%;
+    height: 300px;
+  }
+
+  .reservation_section {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .reservation_page {
+    width: 100%;
+    height: auto;
+  }
+
+  .reservation_form {
+    width: 100%;
+    height: auto;
+  }
+
+  .form_field {
+    width: 100%;
+  }
+
+  .form_input {
+    width: 100%;
+  }
+
+  .reservation_submit {
+    width: 100%;
+  }
+
+  .tables_layout {
+    width: 100%;
+    height: 400px;
+  }
+
+  .Card_login .Header {
+    width: 90%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main_title h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .header_title {
+    font-size: 28px;
+  }
+
+  .header_login button {
+    padding: 15px 25px;
+    width: 100px;
+    font-size: 16px;
+  }
+
+  .Card_login .Header {
+    padding: 1.5rem;
+  }
+}

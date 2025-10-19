@@ -1,0 +1,25 @@
+from django.urls import path
+from .views import create_reservation,available_tables_today,occupied_tables_today,total_reservations_today,total_guests_today,reservations_today,get_costumers,add_tables, get_reservations, GETdaily_summary,alter_reservation_time,alter_admin_password,alter_n_seats,add_customer,add_customer,make_reservation,GET_tables_datetime,GET_any_tables,cancel_reservation,get_tables,get_admins,add_admins
+urlpatterns= [
+    path('admin/GETcostumers/', get_costumers),
+    path('admin/GETreservations/', get_reservations),
+    path('admin/GETtables/', get_tables),
+    path('admin/GETadmins/', get_admins),
+    path('admin/GETdaily_summary/', GETdaily_summary),
+    path('admin/alter_reservation/<int:pk>/',alter_reservation_time, name='alter_reservation'),
+    path('admin/alter_admin_password/<int:pk>/', alter_admin_password, name='alter_admin_password'),
+    path('admin/alter_n_seats/<int:pk>/', alter_n_seats, name='alter_n_seats'),
+    path('admin/total-reservations-today/', total_reservations_today),
+    path('admin/total-guests-today/', total_guests_today),
+    path('admin/occupied-tables-today/', occupied_tables_today),
+    path('admin/available-tables-today/', available_tables_today),
+    path('admin/reservations-today/', reservations_today),
+    path('add_customer/',add_customer, name= 'add_customer'),
+    path('admin/add_tables/', add_tables, name= "add_tables"),
+    path('admin/add_admins/', add_admins, name= 'add_admins'),
+    path('make_reservation/',make_reservation, name='make_reservation'),
+    path('create_reservation/', create_reservation, name= 'create_reservation'),
+    path('GET_tables_datetime/',GET_tables_datetime, name='GET_tables_datetime'),
+    path('GET_any_tables/<str:date>/<str:time>/<int:seats>/', GET_any_tables, name= 'GET_any_tables'),
+    path('cancel_reservation/', cancel_reservation, name='cancel_reservation'),
+]
